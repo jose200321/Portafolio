@@ -1,32 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import Laptop3D from './components/LapTop3d.jsx';
-
+import BibliotecaLogo from "../Images/BibliotecaLogo.JPG";
 const experiences = [
   {
     company: 'BINSA SOFTWARE',
     role: 'Developer',
-    period: '04/2024 - 10/2024',
-    description: [
-      'Modificación y optimización de formularios desarrollados con Ext JS, realizando ajustes avanzados en el diseño UI, implementando validaciones de negocio, estructuras dinámicas de campos y comportamientos interactivos.',
-      'Desarrollo en el backend utilizando C# con Entity Framework y ADO.NET para una eficiente gestión, persistencia y manipulación de datos en entornos empresariales.',
-      'Diseño, configuración y optimización de consultas complejas y estructuras de datos en SQL Server para su correcta integración en informes personalizados de Crystal Reports.',
-      'Ejecución de pruebas funcionales y soporte integral en el proceso de despliegue (paso a producción) de los módulos e implementaciones desarrolladas.'
-    ],
-    tools: ['C# (.NET)', 'Entity Framework', 'ADO.NET', 'SQL Server', 'Ext JS', 'JavaScript', 'Crystal Reports']
+    period: '04/2024 — 10/2024',
+    summary: 'Desarrollo full-stack empresarial con C# (.NET), Ext JS, SQL Server y Crystal Reports, participando hasta el pase a producción.',
+    tools: ['C# (.NET)', 'SQL Server', 'Ext JS', 'Crystal Reports']
   }
 ];
+
 const education = [
   {
-    institution: 'Universidad San Ignacio de Loyola (USIL)',
     degree: 'Ingeniería de Software',
-    period: '2025 - Actualidad',
-    description: 'Formación profesional orientada a la arquitectura de software, diseño de sistemas avanzados, ingeniería de requisitos y gestión de proyectos tecnológicos.'
+    institution: 'Universidad San Ignacio de Loyola (USIL)',
+    period: '2025 — Actualidad',
   },
   {
+    degree: 'Desarrollo de Software (Técnico)',
     institution: 'Instituto San Ignacio de Loyola (ISIL)',
-    degree: 'Carrera Técnica de Desarrollo de Software',
-    period: '2022 - 2025',
-    description: 'Egresado con titulación técnica y certificación modular en tecnologías de desarrollo de software, abarcando bases de datos, lógica de programación y desarrollo web full-stack.'
+    period: '2022 — 2025',
   }
 ];
 
@@ -44,10 +38,10 @@ const projects = [
     title: 'E-Commerce Librería Full-Stack',
     year: '2026',
     description: 'Plataforma de comercio electrónico con pasarela de pagos integrada, carrito persistente y gestión de catálogo.',
-    tags: ['React', 'Node.js', 'SQL Server', 'Stripe'],
-    github: 'https://github.com/jose200321',
-    demo: '#',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    tags: ['React', 'Node.js', 'SQL Server', 'Mercado Pago',"HTML5", "CSS3" , "Tailwind CSS" ],
+    github: 'https://github.com/jose200321/Biblioteca',
+    demo: 'https://biblioteca-ten-lilac.vercel.app/',
+    image: BibliotecaLogo,
   },
   {
     title: 'Analytics Dashboard',
@@ -60,10 +54,132 @@ const projects = [
   },
 ];
 
-const skills = [
-  'React', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 & CSS3',
-  'Java / Spring Boot', 'Node.js / Express', 'C# / .NET',
-  'SQL Server', 'Oracle PL/SQL', 'MySQL', 'PostgreSQL', 'Git'
+const skillCategories = [
+  {
+    title: 'Frontend',
+    skills: [
+      {
+        name: 'React',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <circle cx="12" cy="12" r="2" />
+            <ellipse cx="12" cy="12" rx="3.5" ry="9" />
+            <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)" />
+            <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)" />
+          </svg>
+        )
+      },
+      {
+        name: 'JavaScript (ES6+)',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z" />
+          </svg>
+        )
+      },
+      {
+        name: 'Tailwind CSS',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1-1 1-4 1-5-2-8-2-4 1-4 1zM4 9s1-1 4-1 5 2 8 2 4-1 4-1-1 1-4 1-5-2-8-2-4 1-4 1z" />
+          </svg>
+        )
+      },
+      {
+        name: 'HTML5 & CSS3',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        )
+      }
+    ]
+  },
+  {
+    title: 'Backend',
+    skills: [
+      {
+        name: 'Java / Spring Boot',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M18 10h-1.26A8 8 0 109 20h9a1 1 0 001-1v-8a1 1 0 00-1-1z" />
+          </svg>
+        )
+      },
+      {
+        name: 'Node.js / Express',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        )
+      },
+      {
+        name: 'C# / .NET',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        )
+      }
+    ]
+  },
+  {
+    title: 'Bases de Datos',
+    skills: [
+      {
+        name: 'SQL Server',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <ellipse cx="12" cy="5" rx="9" ry="3" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+          </svg>
+        )
+      },
+      {
+        name: 'Oracle PL/SQL',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+        )
+      },
+      {
+        name: 'MySQL',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 12c0 2.21 3.58 4 8 4s8-1.79 8-4" />
+          </svg>
+        )
+      },
+      {
+        name: 'PostgreSQL',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        )
+      }
+    ]
+  },
+  {
+    title: 'Control de Versiones',
+    skills: [
+      {
+        name: 'Git',
+        icon: (
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <circle cx="6" cy="6" r="3" />
+            <circle cx="18" cy="18" r="3" />
+            <circle cx="18" cy="6" r="3" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M18 9v6M6 9v3a3 3 0 003 3h3" />
+          </svg>
+        )
+      }
+    ]
+  }
 ];
 
 export default function App() {
@@ -123,11 +239,11 @@ export default function App() {
 
           <div className="flex items-center gap-6 md:gap-8">
             <nav className="hidden md:flex gap-6 md:gap-8 text-sm text-neutral-600 dark:text-neutral-400">
-              <a href="#experiencia" className="hover:text-neutral-950 dark:hover:text-white transition-colors">Experiencia</a>
-              <a href="#proyectos" className="hover:text-neutral-950 dark:hover:text-white transition-colors">Proyectos</a>
-              <a href="#stack" className="hover:text-neutral-950 dark:hover:text-white transition-colors">Stack</a>
-              <a href="#contacto" className="hover:text-neutral-950 dark:hover:text-white transition-colors">Contacto</a>
-            </nav>
+  <a href="#trayectoria" className="hover:text-neutral-950 dark:hover:text-white transition-colors">Trayectoria</a>
+  <a href="#proyectos" className="hover:text-neutral-950 dark:hover:text-white transition-colors">Proyectos</a>
+  <a href="#stack" className="hover:text-neutral-950 dark:hover:text-white transition-colors">Stack</a>
+  <a href="#contacto" className="hover:text-neutral-950 dark:hover:text-white transition-colors">Contacto</a>
+</nav>
 
             {/* Botón Modo Oscuro */}
             <button
@@ -193,73 +309,67 @@ export default function App() {
           </div>
         </section>
 
-        {/* Experiencia Profesional */}
-        <section id="experiencia" className="py-24 border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
-          <div className="flex items-baseline justify-between mb-12">
-            <h2 className="text-2xl font-semibold tracking-tight">Experiencia Profesional</h2>
-            <span className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">Trayectoria</span>
-          </div>
+        {/* Trayectoria (Experiencia + Educación unificadas) */}
+<section id="trayectoria" className="py-24 border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
+  <div className="flex items-baseline justify-between mb-12">
+    <h2 className="text-2xl font-semibold tracking-tight">Trayectoria</h2>
+    <span className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">Experiencia & Formación</span>
+  </div>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={index} className="flex flex-col md:flex-row md:items-start justify-between gap-4">
-                <div className="max-w-3xl">
-                  <div className="flex flex-wrap items-baseline gap-3 mb-1">
-                    <h3 className="text-lg font-medium">
-                      {exp.company} <span className="text-neutral-400 font-light">— {exp.role}</span>
-                    </h3>
-                  </div>
-                  <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono mb-4 block">{exp.period}</span>
-                  
-                  <ul className="space-y-3 mb-6">
-                    {exp.description.map((item, i) => (
-                      <li key={i} className="text-sm text-neutral-600 dark:text-neutral-400 font-light leading-relaxed flex items-start gap-2">
-                        <span className="text-neutral-400 mt-1">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tools.map((tool) => (
-                      <span
-                        key={tool}
-                        className="text-xs px-2.5 py-1 bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 rounded-md"
-                      >
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    {/* Columna Izquierda: Experiencia */}
+    <div>
+      <h3 className="text-xs uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500 mb-6">
+        Experiencia
+      </h3>
+      <div className="space-y-8">
+        {experiences.map((exp, index) => (
+          <div key={index}>
+            <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+              <h4 className="text-base font-medium">
+                {exp.company} <span className="text-neutral-400 font-light">— {exp.role}</span>
+              </h4>
+              <span className="text-xs text-neutral-400 dark:text-neutral-500 font-mono">{exp.period}</span>
+            </div>
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 font-light leading-relaxed mb-4">
+              {exp.summary}
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {exp.tools.map((tool) => (
+                <span
+                  key={tool}
+                  className="text-[11px] px-2.5 py-0.5 bg-neutral-100 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 rounded-md"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
 
-        {/* Educación */}
-        <section id="educacion" className="py-24 border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
-          <div className="flex items-baseline justify-between mb-12">
-            <h2 className="text-2xl font-semibold tracking-tight">Educación</h2>
-            <span className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">Académico</span>
+    {/* Columna Derecha: Educación */}
+    <div>
+      <h3 className="text-xs uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500 mb-6">
+        Educación
+      </h3>
+      <div className="space-y-6">
+        {education.map((edu, index) => (
+          <div key={index}>
+            <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+              <h4 className="text-base font-medium">{edu.degree}</h4>
+              <span className="text-xs text-neutral-400 dark:text-neutral-500 font-mono">{edu.period}</span>
+            </div>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 font-light">
+              {edu.institution}
+            </p>
           </div>
-
-          <div className="space-y-10">
-            {education.map((edu, index) => (
-              <div key={index} className="max-w-3xl">
-                <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-1 mb-1">
-                  <h3 className="text-lg font-medium">
-                    {edu.degree}
-                  </h3>
-                  <span className="text-xs text-neutral-400 dark:text-neutral-500 font-mono">{edu.period}</span>
-                </div>
-                <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-3">{edu.institution}</p>
-                <p className="text-sm text-neutral-600 dark:text-neutral-400 font-light leading-relaxed">
-                  {edu.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Proyectos */}
 <section id="proyectos" className="py-24 border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
@@ -352,17 +462,31 @@ export default function App() {
   </div>
 </section>
 
-        {/* Stack Técnico */}
+        {/* Stack Técnico Desglosado con Iconos */}
         <section id="stack" className="py-24 border-b border-neutral-200 dark:border-neutral-800 transition-colors duration-300">
-          <h2 className="text-2xl font-semibold tracking-tight mb-8">Tecnologías</h2>
-          <div className="flex flex-wrap gap-2.5">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="px-4 py-2 text-sm border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-800 dark:text-neutral-200 hover:border-neutral-950 dark:hover:border-white transition-colors"
-              >
-                {skill}
-              </span>
+          <div className="flex items-baseline justify-between mb-12">
+            <h2 className="text-2xl font-semibold tracking-tight">Tecnologías</h2>
+            <span className="text-xs text-neutral-400 dark:text-neutral-500 uppercase tracking-widest">Stack Técnico</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {skillCategories.map((category, index) => (
+              <div key={index} className="space-y-4">
+                <h3 className="text-xs uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-500">
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((item) => (
+                    <span
+                      key={item.name}
+                      className="px-3.5 py-1.5 text-sm border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-800 dark:text-neutral-200 hover:border-neutral-950 dark:hover:border-white transition-colors inline-flex items-center gap-2"
+                    >
+                      <span className="text-neutral-500 dark:text-neutral-400">{item.icon}</span>
+                      <span>{item.name}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>
